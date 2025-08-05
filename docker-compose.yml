@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  evolution-api:
+    image: devlikeapro/evolution-api
+    container_name: evolution-api
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - LICENSE_KEY=YOUR_LICENSE_KEY
+      - DB_TYPE=sqlite
+      - TOKEN=your_secret_token
+    volumes:
+      - ./sessions:/app/sessions
